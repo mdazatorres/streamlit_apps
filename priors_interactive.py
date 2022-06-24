@@ -28,7 +28,7 @@ def plotgamma(xmin, xmax, alpha,beta):  # normalizado
     return fig
 
 distributions={'Gamma': r'f(x,\alpha,\beta)=\frac{\beta^\alpha x^{\alpha-1}e^{-\beta x}}{\Gamma(\alpha)}',
-               'Beta': r'f(x,a,b)=\frac{\Gamma(a+b) x^{a-1}(1-x)^{b-1}}{\Gamma(a)\Gamma(b)}', 'Normal':'f(x;\mu,\sigma)','Poisso':'f(x)'}
+               'Beta': r'f(x,a,b)=\frac{\Gamma(a+b) x^{a-1}(1-x)^{b-1}}{\Gamma(a)\Gamma(b)}', 'Normal':'f(x;\mu,\sigma)','Poisson':'f(x)'}
 st.sidebar.header('SELECT A DISTRIBUTION')
 list_distri = ['Gamma', 'Beta', 'Normal', 'Poisson']
 city = st.sidebar.selectbox('', list_distri)
