@@ -28,9 +28,9 @@ def plotgamma(xmin, xmax, alpha,beta):  # normalizado
     return fig
 
 distributions={'Gamma': r'f(x,\alpha,\beta)=\frac{\beta^\alpha x^{\alpha-1}e^{-\beta x}}{\Gamma(\alpha)}',
-               'Beta': r'f(x,a,b)=\frac{\Gamma(a+b) x^{a-1}(1-x)^{b-1}}{\Gamma(a)\Gamma(b)}'}
+               'Beta': r'f(x,a,b)=\frac{\Gamma(a+b) x^{a-1}(1-x)^{b-1}}{\Gamma(a)\Gamma(b)}', 'Normal':'f(x;\mu,\sigma)','Poisso':'f(x)'}
 st.sidebar.header('SELECT A DISTRIBUTION')
-list_distri=['Gamma', 'Beta', 'Normal', 'Poisson']
+list_distri = ['Gamma', 'Beta', 'Normal', 'Poisson']
 city = st.sidebar.selectbox('', list_distri)
 
 st.header(city + ' distribution')
@@ -56,7 +56,7 @@ if city=='Gamma':
     alpha = col2.number_input('alpha', min_value=0.00000000, value=1.00000000, step=0.00000001, format="%f")
     beta = col2.number_input('beta', min_value=0.00000000, value=1.00000000, step=0.00000001, format="%f")
     fig1 = plotgamma(xmin, xmax, alpha, beta)
-elif city=='Beta':
+else:  #if city=='Beta':
     a = col2.number_input('a', min_value=0.00000000, value=1.00000000, step=0.00000001, format="%f")
     b = col2.number_input('b', min_value=0.00000000, value=1.00000000, step=0.00000001, format="%f")
     fig1 = plotgamma(xmin, xmax, a, b)
